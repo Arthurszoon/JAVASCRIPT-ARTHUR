@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Números Primos de 1 até N</title>
+
+    <script type="text/javascript">
+
+        // Solicita o número N
+        let N = parseInt(
+            prompt("Digite um número inteiro:")
+        );
+
+        let resultado = "Números primos entre 1 e " + N + ":\n";
+
+        // Percorre os números de 2 até N
+        for (let numero = 2; numero <= N; numero++) {
+
+            let primo = true;
+
+            // Verifica se o número é primo
+            for (let i = 2; i < numero; i++) {
+
+                if (numero % i == 0) {
+                    primo = false;
+                    break;
+                }
+
+            }
+
+            // Adiciona ao resultado se for primo
+            if (primo) {
+                resultado += numero + "\n";
+            }
+
+        }
+
+        // Exibe o resultado
+        alert(resultado);
+
+        console.log(resultado);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
