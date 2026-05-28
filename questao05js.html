@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Número Primo</title>
+
+    <script type="text/javascript">
+
+        // Entrada de dados
+        let numero = parseInt(
+            prompt("Digite um número inteiro:")
+        );
+
+        let primo = true;
+
+        // Números menores que 2 não são primos
+        if (numero < 2) {
+            primo = false;
+        } else {
+
+            // Verifica divisores
+            for (let i = 2; i < numero; i++) {
+
+                if (numero % i == 0) {
+                    primo = false;
+                    break;
+                }
+
+            }
+
+        }
+
+        // Exibe o resultado
+        if (primo) {
+            alert(numero + " é primo.");
+        } else {
+            alert(numero + " não é primo.");
+        }
+
+        console.log(
+            primo
+            ? numero + " é primo."
+            : numero + " não é primo."
+        );
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
