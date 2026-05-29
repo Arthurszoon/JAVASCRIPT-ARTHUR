@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Análise de Números Inteiros</title>
+</head>
+<body>
+  <h1>Análise de Números Inteiros</h1>
+  <p>Clique no botão abaixo para iniciar o programa.</p>
+  <p>Digite vários números inteiros. O programa para quando você digita <strong>0</strong>.</p>
+  <button id="btnIniciar">Iniciar</button>
+
+  <script>
+    document.getElementById('btnIniciar').addEventListener('click', function () {
+      let soma = 0;
+      let quantidade = 0;
+      let maior = null;
+      let menor = null;
+
+      while (true) {
+        let entrada = prompt("Digite um número inteiro (0 para encerrar):");
+
+        if (entrada === null) {
+          break;
+        }
+
+        let numero = Number(entrada);
+
+        if (isNaN(numero)) {
+          alert("Valor inválido. Digite um número inteiro.");
+          console.log("Valor inválido informado:", entrada);
+          continue;
+        }
+
+        if (numero === 0) {
+          break;
+        }
+
+        soma += numero;
+        quantidade++;
+
+        if (maior === null || numero > maior) {
+          maior = numero;
+        }
+
+        if (menor === null || numero < menor) {
+          menor = numero;
+        }
+      }
+
+      if (quantidade === 0) {
+        let mensagem = "Nenhum número válido foi informado.";
+        alert(mensagem);
+        console.log(mensagem);
+        return;
+      }
+
+      let media = soma / quantidade;
+
+      let resultado = 
+        "Soma: " + soma + "\n" +
+        "Quantidade: " + quantidade + "\n" +
+        "Média: " + media.toFixed(2) + "\n" +
+        "Maior: " + maior + "\n" +
+        "Menor: " + menor;
+
+      alert(resultado);
+      console.log(resultado);
+    });
+  </script>
+</body>
+</html>
