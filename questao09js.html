@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Maiores e Menores de Idade</title>
+</head>
+<body>
+  <h1>Contagem de Maiores e Menores de Idade</h1>
+  <p>Clique no botão abaixo para iniciar o programa.</p>
+  <button id="btnIniciar">Iniciar</button>
+
+  <script>
+    document.getElementById('btnIniciar').addEventListener('click', function () {
+      let maiores = 0;
+      let menores = 0;
+
+      while (true) {
+        let nome = prompt("Digite o nome da pessoa (ou 'fim' para encerrar):");
+
+        if (nome === null || nome.toLowerCase() === "fim") {
+          break;
+        }
+
+        let idadeTexto = prompt(`Digite a idade de ${nome}:`);
+
+        if (idadeTexto === null) {
+          break;
+        }
+
+        let idade = Number(idadeTexto);
+
+        if (isNaN(idade)) {
+          alert("Idade inválida. Tente novamente.");
+          console.log("Idade inválida informada para:", nome);
+          continue;
+        }
+
+        if (idade >= 18) {
+          maiores++;
+        } else {
+          menores++;
+        }
+      }
+
+      let resultado = `Maiores de idade: ${maiores}\nMenores de idade: ${menores}`;
+
+      alert(resultado);
+      console.log(resultado);
+    });
+  </script>
+</body>
+</html>
